@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1028509660111",
+    "project_id": "crudtendencias",
+    "storage_bucket": "crudtendencias.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028509660111:android:30b7adea67baa4cc4e18ba",
+        "android_client_info": {
+          "package_name": "com.example.crud_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoQ893oGAbkbQv-v2l4gGKF8vaHTlCWOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
