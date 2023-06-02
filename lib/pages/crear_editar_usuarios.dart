@@ -1,3 +1,4 @@
+import 'package:crud_firebase/main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -45,7 +46,7 @@ class _CrearEditarUsuariosScreenState extends State<CrearEditarUsuariosScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: bgcolor,
         title: Text(widget.tituloAppBar),
       ),
       body: SingleChildScrollView(
@@ -153,7 +154,7 @@ class _CrearEditarUsuariosScreenState extends State<CrearEditarUsuariosScreen> {
                       width: double.infinity,
                       child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.green,
+                              backgroundColor: bgcolor,
                               elevation: 0,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(30))),

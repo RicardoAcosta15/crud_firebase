@@ -1,13 +1,15 @@
 import 'package:crud_firebase/pages/crear_editar_usuarios.dart';
-import 'package:crud_firebase/pages/lista_usuarios.dart';
-// ignore: depend_on_referenced_packages
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() async {
+Color bgcolor = dotenv.env['COLOR'] as Color;
+
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.green,
+          backgroundColor: bgcolor,
           title: const Text('Crud Usuarios'),
           actions: [
             IconButton(
@@ -32,7 +34,6 @@ class MyApp extends StatelessWidget {
                 icon: const Icon(Icons.add))
           ],
         ),
-        body: ListaUsuariosScreen(),
       ),
     );
   }

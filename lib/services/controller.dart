@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:crud_firebase/main.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,7 +12,7 @@ class FirestoreService {
   final CollectionReference usuarioCollection =
       FirebaseFirestore.instance.collection("usuarios");
 
-//guardar datos usuario
+  //guardar datos usuario
   Future<void> guardarDataUsuario({
     required String nombre,
     required String apellido,
@@ -33,7 +34,7 @@ class FirestoreService {
       Get.showSnackbar(GetSnackBar(
         title: 'Usuario Creado',
         duration: const Duration(seconds: 2),
-        backgroundColor: Colors.green,
+        backgroundColor: bgcolor,
         message: 'El usuario de $nombre fue creado exitosamente.',
       ));
     } catch (e) {
@@ -70,7 +71,7 @@ class FirestoreService {
       Get.showSnackbar(GetSnackBar(
         title: 'Usuario Actualizado ',
         duration: const Duration(seconds: 2),
-        backgroundColor: Colors.green,
+        backgroundColor: bgcolor,
         message: 'El usuario de $nombre fue actualizado.',
       ));
 
@@ -78,29 +79,6 @@ class FirestoreService {
     } catch (e) {
       if (kDebugMode) {
         print('Error al actualizar los datos del usuario: $e');
-      }
-      return false;
-    }
-  }
-
-  Future<bool> eliminarUsuario(String usuarioId, nombre) async {
-    try {
-      DocumentReference usuarioDocumentReference =
-          usuarioCollection.doc(usuarioId);
-
-      await usuarioDocumentReference.delete();
-
-      Get.back();
-      Get.showSnackbar(GetSnackBar(
-        title: 'Usuario Eliminado',
-        duration: const Duration(seconds: 2),
-        backgroundColor: Colors.red,
-        message: 'El usuario con ID $nombre fue eliminado.',
-      ));
-      return true;
-    } catch (e) {
-      if (kDebugMode) {
-        print('Error al eliminar el usuario: $e');
       }
       return false;
     }
