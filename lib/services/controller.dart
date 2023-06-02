@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:crud_firebase/main.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,7 +11,7 @@ class FirestoreService {
   final CollectionReference usuarioCollection =
       FirebaseFirestore.instance.collection("usuarios");
 
-  //guardar datos usuario
+//guardar datos usuario
   Future<void> guardarDataUsuario({
     required String nombre,
     required String apellido,
@@ -34,7 +33,7 @@ class FirestoreService {
       Get.showSnackbar(GetSnackBar(
         title: 'Usuario Creado',
         duration: const Duration(seconds: 2),
-        backgroundColor: bgcolor,
+        backgroundColor: Colors.green,
         message: 'El usuario de $nombre fue creado exitosamente.',
       ));
     } catch (e) {
@@ -71,7 +70,7 @@ class FirestoreService {
       Get.showSnackbar(GetSnackBar(
         title: 'Usuario Actualizado ',
         duration: const Duration(seconds: 2),
-        backgroundColor: bgcolor,
+        backgroundColor: Colors.green,
         message: 'El usuario de $nombre fue actualizado.',
       ));
 
