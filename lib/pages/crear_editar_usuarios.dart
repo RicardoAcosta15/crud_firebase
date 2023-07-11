@@ -1,12 +1,13 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../model/usuario_data_model.dart';
 import '../services/controller.dart';
 
-// ignore: must_be_immutable
 class CrearEditarUsuariosScreen extends StatefulWidget {
   CrearEditarUsuariosScreen(
-      {super.key, required this.tituloAppBar,
+      {required this.tituloAppBar,
       this.nombre,
       this.apellido,
       this.sexo,
@@ -61,7 +62,7 @@ class _CrearEditarUsuariosScreenState extends State<CrearEditarUsuariosScreen> {
                     Text(
                       widget.tituloAppBar,
                       style:
-                          const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                     ),
                     TextFormField(
                       initialValue: nombreAc,

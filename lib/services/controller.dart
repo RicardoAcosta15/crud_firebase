@@ -82,4 +82,27 @@ class FirestoreService {
       return false;
     }
   }
+
+  Future<bool> eliminarUsuario(String usuarioId, nombre) async {
+    try {
+      DocumentReference usuarioDocumentReference =
+          usuarioCollection.doc(usuarioId);
+
+      await usuarioDocumentReference.delete();
+
+      Get.back();
+      Get.showSnackbar(GetSnackBar(
+        title: 'Usuario Eliminado',
+        duration: const Duration(seconds: 2),
+        backgroundColor: Colors.red,
+        message: 'El usuario con ID $nombre fue eliminado.',
+      ));
+      return true;
+    } catch (e) {
+      if (kDebugMode) {
+        print('Error al eliminar el usuario: $e');
+      }
+      return false;
+    }
+  }
 }
