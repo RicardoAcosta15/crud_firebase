@@ -4,6 +4,7 @@ import 'package:crud_firebase/services/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// ignore: must_be_immutable
 class ListaUsuariosScreen extends StatelessWidget {
   ListaUsuariosScreen({super.key});
 
